@@ -35,6 +35,7 @@ app.post('/register', async (req, res) => {
     await user.save();
     res.status(201).json({ message: 'User created', token: signToken(user) });
   } catch (err) {
+    
     console.error('Register error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
